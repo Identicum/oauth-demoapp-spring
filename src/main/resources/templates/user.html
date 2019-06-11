@@ -21,11 +21,6 @@
 				background-color: #204667;
 			}
 		</style>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$('[data-toggle="popover"]').popover();
-			});
-		</script>
 	</head>
 	<body>
 		<div class="container text-center">
@@ -37,15 +32,15 @@
 						</a>
 					</div>
 					<div class="navbar-nav">
-						<a class="nav-item" href="#" style="color:#ffffff" data-toggle="popover" title="Token information" data-html="true" th:attr="data-content='<code>'+${userInfoMap}+'</code>'">
-							<span class="fa fa-user"></span> [[${name}]]
+						<a class="nav-item" href="#" style="color:#ffffff" >
+							<span class="fa fa-user"></span> [[${sub}]]
 						</a>
 						<a class="nav-item" href="logout" style="color: #ffffff"><span class="fa fa-sign-out"></span>Logout</a>
 					</div>
 				</div>
 			</div>
 			<div style="margin-top:100px">
-				<h1 th:text="'Welcome ' + ${name}">Welcome </h1>
+				<code>[[${userInfoMap}]]</code>
 			</div>
 		</div>
 		<footer class="footer">
