@@ -1,58 +1,57 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-	    <title>Demo App</title>
-	  	<script src="webjars/jquery/3.3.1-1/jquery.min.js"></script>
+		<title>Identicum - Demo App</title>
+		<script src="webjars/jquery/3.3.1-1/jquery.min.js"></script>
 		<script src="webjars/popper.js/1.14.3/umd/popper.min.js"></script>
 		<script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.1.3/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="webjars/font-awesome/5.2.0/css/all.css" />
 		<style type="text/css">
-			 .navbar {
-			 	background-color:rgba(0,0,0,0.8);
-			 	min-height: 65px;
-			 }
-			
+			.navbar {
+				background-color:rgba(0,0,0,0.8);
+				min-height: 65px;
+			}
 			.footer {
-			    position: absolute;
-			    bottom: 0;
-			    width: 100%;
-			    height: 60px;
-			    line-height: 60px;
-			    background-color: #204667;
-			}	
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 60px;
+				line-height: 60px;
+				background-color: #204667;
+			}
 		</style>
 		<script type="text/javascript">
-		 	$(document).ready(function(){
-		 		$('[data-toggle="popover"]').popover();
+			$(document).ready(function(){
+				$('[data-toggle="popover"]').popover();
 			});
-		 </script>
+		</script>
 	</head>
 	<body>
 		<div class="container text-center">
 			<div class="navbar fixed-top">
-			    <div class="container">
-			        <div class="navbar-header">
-			            <a class="navbar-brand" rel="home" href="#" title="Identicum">
-			                <img style="max-width:100px;margin-top:-7px;" src="//www.identicum.com/uploads/site_logo.png">  
-			            </a>
-			        </div>
-			        <div class="navbar-nav">
-			        	<a class="nav-item" href="#" style="color:#ffffff" data-toggle="popover" title="Token information" data-html="true" th:attr="data-content='<code>'+${userInfoMap}+'</code>'">
-			        		<span class="fa fa-user"></span> [[${name}]]
-			        	</a>
-			        	<a class="nav-item" href="logout" style="color: #ffffff"><span class="fa fa-sign-out"></span> Logout</a>
-			        </div>
-			    </div>	
-		   </div>
-		   <div style="margin-top:100px">
-		   		<h1 th:text="'Welcome ' + ${name}">Welcome </h1>
-		   	</div>
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand" rel="home" href="#" title="Identicum">
+							<img style="max-width:100px;margin-top:-7px;" src="imgs/logo.png">
+						</a>
+					</div>
+					<div class="navbar-nav">
+						<a class="nav-item" href="#" style="color:#ffffff" data-toggle="popover" title="Token information" data-html="true" th:attr="data-content='<code>'+${userInfoMap}+'</code>'">
+							<span class="fa fa-user"></span> [[${name}]]
+						</a>
+						<a class="nav-item" href="logout" style="color: #ffffff"><span class="fa fa-sign-out"></span>Logout</a>
+					</div>
+				</div>
+			</div>
+			<div style="margin-top:100px">
+				<h1 th:text="'Welcome ' + ${name}">Welcome </h1>
+			</div>
 		</div>
 		<footer class="footer">
-		      <div class="container">
-		        <span class="text-muted">Demo Application</span>
-		      </div>
+			<div class="container">
+				<span class="text-muted">Demo Application</span>
+			</div>
 		</footer>
 	</body>
 </html>
