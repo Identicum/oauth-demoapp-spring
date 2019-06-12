@@ -9,6 +9,7 @@ Additionally, you need to create your client application in your IdP and configu
 ## Build
 The build process to compile the source code is based in Apache Maven.
 To create the war file, go to the folder where you cloned the repository and run:
+
     mvn clean package
 
 ## Run
@@ -18,6 +19,7 @@ To execute in a web container like Tomcat, simply copy the file to the webapps f
 
 ### Spring Boot
 To build and run the code, in the folder where you cloned the repository, run:
+
     mvn spring-boot:run
 
 ### Docker
