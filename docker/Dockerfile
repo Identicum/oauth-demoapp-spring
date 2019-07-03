@@ -9,6 +9,8 @@ FROM identicum/centos-tomcat:latest
 MAINTAINER Gustavo J Gallardo <ggallard@identicum.com>
 
 RUN yum -y install unzip
-COPY --from=build-env /source/target/spring-oauth-demo-0.0.1-SNAPSHOT.war /tmp/demo-app.war
-RUN unzip -qq /tmp/demo-app.war -d /usr/local/tomcat/webapps/demo-app && \
-    rm -f /tmp/demo-app.war
+COPY --from=build-env /source/target/spring-oauth-demo-0.0.1-SNAPSHOT.war /tmp/oauth-demoapp-spring.war
+RUN unzip -qq /tmp/oauth-demoapp-spring.war -d /usr/local/tomcat/webapps/oauth-demoapp-spring && \
+    rm -f /tmp/oauth-demoapp-spring.war
+
+RUN echo "<% response.sendRedirect(\"/oauth-demoapp-spring/\"); %>" > webapps/ROOT/index.jsp
