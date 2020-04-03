@@ -6,7 +6,7 @@ RUN /usr/bin/mvn package
 # ############################################################################
 # Build runtime image
 FROM identicum/centos-tomcat:latest
-MAINTAINER Gustavo J Gallardo <ggallard@identicum.com>
+LABEL maintainer="Gustavo J Gallardo <ggallard@identicum.com>"
 
 RUN yum -y install unzip
 COPY --from=build-env /source/target/spring-oauth-demo-0.0.1-SNAPSHOT.war /tmp/oauth-demoapp-spring.war
