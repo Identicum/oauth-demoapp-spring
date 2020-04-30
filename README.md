@@ -4,7 +4,9 @@ This demo app is developed using the OAuth2 implementation of Spring Security (h
 ## Configure
 In order to deploy the demo application, you need to configure a number of parameters in the [configuration file](src/main/resources/application.properties).
 Some of those parameters are endpoint URLs of your IdP.
-Additionally, you need to create your client application in your IdP and configure the client_id and client_secret.
+Additionally, you need to create your client application in your IdP and configure the client_id and client_secret. The redirect_uri sent by the application is:
+
+    <protocol>://<server-name>:8080/oauth-demoapp-spring/login
 
 ## Build
 The build process to compile the source code is based in Apache Maven.
